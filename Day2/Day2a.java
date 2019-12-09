@@ -45,6 +45,8 @@ public class Day2a {
             input = checkOpcode(i, input);
             i += 4;
         }
-        System.out.println(Arrays.toString(input));
+        // answer
+        System.out.println("Answer = " + input[0]);
+
     }
 }
