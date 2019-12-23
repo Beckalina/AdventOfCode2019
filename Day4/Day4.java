@@ -8,7 +8,11 @@ import java.util.ArrayList;
 // - Two adjacent digits are the same (like 22 in 122345).
 // - Going from left to right, the digits never decrease; they only ever increase or stay the same (like 111123 or 135679).
 
-public class Day4a {
+// Additional rules for part 2:
+// - There must be precisely two adjacent matching digits.
+// E.g. 112233 = yes, 111122 = yes, 123444 = no
+
+public class Day4 {
 
     public static void main(String[] args) {
         List<Integer> possiblePasswords = new ArrayList<>();

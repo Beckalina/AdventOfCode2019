@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.*;
 
 public class PasswordCandidate {
     int[] digits = new int[6];
@@ -17,20 +17,38 @@ public class PasswordCandidate {
         return digits;
     }
 
+    public Map<Integer, Integer> countDuplicates() {
+        // Hashmap to count frequency of each digit in digits
+        Map<Integer,Integer> hm = new HashMap();
+        for(Integer x:digits) {
+            if(!hm.containsKey(x)){
+                hm.put(x, 1);
+            }
+            else {
+                hm.put(x, hm.get(x)+1);
+            }
+        }
+        System.out.println(hm);
+        return hm;
+    }
+
     public boolean couldBePassword() {
         for (int i = 1; i <= 5; i++) {
             if (digits[i] < digits[i - 1]) {
-                System.out.println("Sequence descends: " + toString());
+                //System.out.println("Sequence descends: " + toString());
                 return false;
             }
         }
-        for (int i = 0; i < 5; i++) {
-            if (digits[i] == digits[i+1]) {
+        Map<Integer, Integer> hm = countDuplicates();
+        for (Map.Entry mapElement : hm.entrySet()) {
+            // if frequency is 2
+            if (mapElement.getValue().equals(2)) {
+                // no need to check if digits are adjacent as we have already checked digits are ascending
                 System.out.println("Fits conditions: " + toString());
                 return true;
             }
         }
-        System.out.println("Does not contain a pair: " + toString());
+        //System.out.println("Does not contain a pair: " + toString());
         return false;
     }
 
