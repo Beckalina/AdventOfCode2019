@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.IntStream;
 import java.util.ArrayList;
 
 // Guess the password - how many passwords within the range 147981-691423 fit the conditions below?

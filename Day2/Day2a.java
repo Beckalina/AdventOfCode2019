@@ -8,8 +8,9 @@ import java.util.Arrays;
 // Opcode 99 = halt the programme
 
 public class Day2a {
+
     // For the group of 4, positions 0,1,2,3 are here i,x,y,z
-    public static int[] checkOpcode(int i, int[] input) {
+    private static int[] checkOpcode(int i, int[] input) {
         int x = input[i+1];
         int y = input[i+2];
         int z = input[i+3];

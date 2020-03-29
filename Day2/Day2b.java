@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Day2b {
 
-    public static int[] runIntCode(int[] intCode) {
+    private static int[] runIntCode(int[] intCode) {
         int pointer = 0;
         while ((pointer < intCode.length) && (intCode[pointer] != 99)) {
             int[] subArray = Arrays.copyOfRange(intCode, pointer, pointer+4);
@@ -25,7 +25,7 @@ public class Day2b {
         return intCode;
     }
 
-    public static int tryPair(int[] input) {
+    private static int tryPair(int[] input) {
         System.out.println(Arrays.toString(input));
         for (int noun = 0; noun < 100; noun++) {
             for (int verb = 0; verb < 100; verb++) {
